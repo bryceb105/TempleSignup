@@ -23,10 +23,16 @@ namespace TempleSignup.Controllers
         {
             return View();
         }
-
+        [HttpGet]
         public IActionResult SignUp()
         {
             return View();
+        }
+        [HttpGet]
+        public IActionResult Form(string time)
+        {
+
+            return View(time);
         }
     }
 }
