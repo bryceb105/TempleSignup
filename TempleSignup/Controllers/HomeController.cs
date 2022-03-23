@@ -27,7 +27,7 @@ namespace TempleSignup.Controllers
         public IActionResult SignUp()
         {
 
-            var times = _context.times.Where(x => x.Available == true).ToList();
+            var times = _context.times.ToList();
             return View(times);
         }
 
