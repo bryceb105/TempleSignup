@@ -1,5 +1,22 @@
-﻿@model TempleModel
+﻿@model List<Time>
 @{
 }
-<h1>Please Select a Date and Time</h1>
+<h1>Please Select an Available Date and Time</h1>
+
+<form class="form form-group">
+    @if (Model == null)
+    {
+        <h4>No available times, please check again later.</h4>
+    }
+    else
+    {
+
+        @foreach (var x in Model)
+        {
+
+            <a class="btn btn-group-lg btn-outline-primary" asp-action="Form" asp-controller="Home" asp-route-id="@x.id">@x.DateTime</a>
+            <br />
+            <br />
+        }}
+</form>
 

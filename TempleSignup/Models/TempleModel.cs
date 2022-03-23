@@ -16,7 +16,8 @@ namespace TempleSignup.Models
         public string Name { get; set; }
 
         [Required]
-        public DateTime DateTime { get; set; }
+        public int TimeId { get; set; }
+        public Time Time { get; set; }
 
         [Required]
         [Range(1, 15)]
@@ -28,9 +29,6 @@ namespace TempleSignup.Models
 
         [Phone]
         public string Phone { get; set; }
-
-
-
 
 
     }
