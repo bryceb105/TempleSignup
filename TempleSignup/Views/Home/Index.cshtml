@@ -1,47 +1,45 @@
-﻿@model TempleModel
+﻿@{ ViewData["Title"] = "Home Page"; }
 
-@*@foreach (TempleModel t in Model.responses)
-{
-    <partial name="AppointmentSummary" model="t" />
-}*@
+    @model TempleModel
 
-<h1>Layton Utah Temple Tours</h1>
-<img src="~/images/Layton.jpg" />
-<p>
-    We can only add a limited number of tours at this time. They will be removing the visitors center soon so
-    that they can complete the landscaping. When the trailer is gone, we anticipate being able to talk to groups
-    on the lawn of the church across the street or at the Morgan's backyard. We are trying to facilitate as many
-    groups as possible, so please only sign-up when you can commit to coming on the selected date and time.
-    We have a lot of last minute cancelations.
-<p>
+    @*@foreach (TempleModel t in Model.responses)
+        {
+            <partial name="AppointmentSummary" model="t" />
+        }*@
 
-<p>We can do groups on Saturday, please text me at 801-628-4488.</p>
+    <h1>Layton Utah Temple Tours</h1>
+    <img src="~/images/Layton.jpg" />
+    <p>
+        We can only add a limited number of tours at this time. They will be removing the visitors center soon so
+        that they can complete the landscaping. When the trailer is gone, we anticipate being able to talk to groups
+        on the lawn of the church across the street or at the Morgan's backyard. We are trying to facilitate as many
+        groups as possible, so please only sign-up when you can commit to coming on the selected date and time.
+        We have a lot of last minute cancelations.
+    <p>
+
+    <p>We can do groups on Saturday, please text me at 801-628-4488.</p>
 
 
-<b>General Tour Instructions:</b>
-<ul>
-    <li>Park on Rosewood (west side of the temple) and meet at the Visitors Center trailer.</li>
-    <li>Dress casual, except on Sunday</li>
-</ul>
+    <b>General Tour Instructions:</b>
+    <ul>
+        <li>Park on Rosewood (west side of the temple) and meet at the Visitors Center trailer.</li>
+        <li>Dress casual, except on Sunday</li>
+    </ul>
 
-<b>Special Accommodations (check the appropriate box when signing up for a tour):</b>
-<ul>
-    <li>Spanish-speaking tours are available, by request.</li>
-</ul>
+    <b>Special Accommodations (check the appropriate box when signing up for a tour):</b>
+    <ul>
+        <li>Spanish-speaking tours are available, by request.</li>
+    </ul>
 
-<b>Available Tours:</b>
-<ul>
-    <li>Tour (Outdoor): We will walk on the sidewalk along Oak Hills and on Rosewood in front of the temple on uneven surfaces; please wear sturdy shoes</li>
-    <li>Trailer Tour: On Sunday. Masks are required</li>
-</ul>
+    <b>Available Tours:</b>
+    <ul>
+        <li>Tour (Outdoor): We will walk on the sidewalk along Oak Hills and on Rosewood in front of the temple on uneven surfaces; please wear sturdy shoes</li>
+        <li>Trailer Tour: On Sunday. Masks are required</li>
+    </ul>
 
-<form method="post" asp-page="/Appointment">
-
-    <input type="hidden" asp-for="@Model.id"/>
 
     <span class="card-text">
-        <button type="submit" class="btn btn-primary">Sign Up Here!</button>
+        <a asp-action="SignUp" asp-controller="Home" class="btn btn-primary">Sign Up Here!</a>
     </span>
-</form>
 
-<p>Please call or text 801-628-4488 with questions or special requests.</p>
+    <p>Please call or text 801-628-4488 with questions or special requests.</p>

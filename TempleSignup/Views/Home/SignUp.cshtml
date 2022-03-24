@@ -1,4 +1,6 @@
-﻿@model List<TempleModel>
+﻿@{ ViewData["Title"] = "Select Appointment"; }
+
+@model List<TempleModel>
 <h1>Please Select an Available Date and Time</h1>
 <br />
 
@@ -25,8 +27,9 @@ else
         }
     }
 }
-<script>function nope(){
-    alert("This time is not available! Please choose another");
+<script>
+    function nope() {
+        alert("This time is not available! Please choose another");
     }
-    </script>
+</script>
 

@@ -1,0 +1,33 @@
+﻿@{ ViewData["Title"] = "Delete Application";
+}
+
+@model TempleModel
+
+<h1>Hello @Model.Name!</h1>
+<h3>Are you really sure you want to delete your appointment for @Model.DateTime?</h3>
+
+@*save MovieId for movie to be deleted -> delete movie*@
+<form method="post">
+
+    <div class="form-group">
+        <input type="hidden" value="@Model.id" asp-for="id" /><br />
+    </div>
+    <div class="form-group">
+        <input value= null type="hidden"class="form-control-sm" asp-for="Name"/><br />
+    </div>
+    <div class="form-group">
+        <input type="hidden" class="form-control-sm" asp-for="DateTime"/><br />
+    </div>
+    <input value= null type="hidden" class="form-control-sm" asp-for="GroupSize"/>
+    <div class="form-group">
+        <input value= null type="hidden" class="form-control-sm" asp-for="Email"/>
+    </div><br />
+    <div class="form-group">
+        <input value= null type="hidden" class="form-control-sm" asp-for="Phone" />
+    </div>
+    <br />
+    <a asp-controller="Home" asp-action="Appointments" class="btn btn-outline-primary float-left m-1">Cancel</a>
+    <input type="submit" class="btn btn-outline-danger float-left m-1" value="Delete" />
+    <div asp-validation-summary="All"></div>
+
+</form>

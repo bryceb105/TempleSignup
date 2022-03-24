@@ -43,13 +43,34 @@ namespace TempleSignup.Controllers
         [HttpPost]
         public IActionResult Form(TempleModel tm)
         {
-
                 _context.Update(tm);
                 _context.SaveChanges();
-                return RedirectToAction("SignUp");
+                return RedirectToAction("Appointments");
         }
 
         public IActionResult Appointments ()
+        {
+            var apt = _context.responses.ToList();
+            return View(apt);
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var application = _context.responses.Single(x => x.id == id);
+
+            return View(application);
+        }
+
+        [HttpPost]
+
+        public IActionResult Delete(TempleModel tm)
+        {
+            _context.Update(tm);
+            _context.SaveChanges();
+            return RedirectToAction("Appointments");
+        }
+        public IActionResult Confirmation()
         {
             return View();
         }

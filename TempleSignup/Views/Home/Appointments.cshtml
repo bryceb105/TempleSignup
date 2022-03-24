@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Appointments";
+}
+@model List<TempleModel>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Appoitment Time</td>
+            <td>Size of Group</td>
+            <td>Email</td>
+            <td>Phone</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            if (i.Name != null)
+            {
+                <tr>
+                    <td>@i.Name</td>
+                    <td>@i.DateTime</td>
+                    <td>@i.GroupSize</td>
+                    <td>@i.Email</td>
+                    <td>@i.Phone</td>
+
+                    <td><a class="btn btn-sm btn-primary" asp-controller="Home" asp-action="Form" asp-route-id="@i.id">Edit</a></td>
+                    <td><a class="btn btn-sm btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@i.id">Delete</a></td>
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>
