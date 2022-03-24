@@ -1,9 +1,6 @@
-﻿@model List<Time>
-@{
-}
+﻿@model List<TempleModel>
 <h1>Please Select an Available Date and Time</h1>
 <br />
-
 
 @if (Model == null)
 {
@@ -14,7 +11,7 @@ else
 
     @foreach (var x in Model)
     {
-        if (x.Available == true)
+        if (x.Name == null)
         {
             <a class="btn btn-group-lg btn-primary" asp-action="Form" asp-controller="Home" asp-route-id="@x.id">@x.DateTime</a>
             <br />
@@ -26,7 +23,8 @@ else
             <br />
             <br />
         }
-    }}
+    }
+}
 <script>function nope(){
     alert("This time is not available! Please choose another");
     }
