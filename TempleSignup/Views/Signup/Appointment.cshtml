@@ -1,0 +1,45 @@
+﻿
+@model TempleModel
+
+<h2>Sign Up Now!</h2>
+<p>Please enter your details for the appointment below!</p>
+
+<form method="post" asp-action="Appointment">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <h4>Appointment:</h4>
+
+    <div class="form-group">
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <h4>Datetime:</h4>
+
+    <div class="form-group">
+        <label asp-for="DateTime">DateTime:</label>
+        <input asp-for="DateTime" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GroupSize">GroupSize (1-15):</label>
+        <input asp-for="GroupSize" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email">Email:</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Phone">Phone Number:</label>
+        <input asp-for="Phone" class="form-control" />
+    </div>
+
+
+    <div class="float-end">
+        <input class="btn btn-primary" type="submit" value="Send Order" />
+    </div>
+
+</form>

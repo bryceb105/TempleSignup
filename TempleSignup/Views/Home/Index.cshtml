@@ -1,5 +1,9 @@
 ﻿@model TempleModel
 
+@*@foreach (TempleModel t in Model.responses)
+{
+    <partial name="AppointmentSummary" model="t" />
+}*@
 
 <h1>Layton Utah Temple Tours</h1>
 <img src="~/images/Layton.jpg" />
@@ -31,6 +35,13 @@
     <li>Trailer Tour: On Sunday. Masks are required</li>
 </ul>
 
-<a class="btn btn-primary" asp-action="SignUp" asp-controller="Home">Sign Up Here!</a>
+<form method="post" asp-page="/Appointment">
+
+    <input type="hidden" asp-for="@Model.id"/>
+
+    <span class="card-text">
+        <button type="submit" class="btn btn-primary">Sign Up Here!</button>
+    </span>
+</form>
 
 <p>Please call or text 801-628-4488 with questions or special requests.</p>
