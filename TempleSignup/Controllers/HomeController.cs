@@ -38,5 +38,10 @@ namespace TempleSignup.Controllers
            
             return View();
         }
+
+        public IActionResult Appointments ()
+        {
+            return View();
+        }
     }
 }
