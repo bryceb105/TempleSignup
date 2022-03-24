@@ -43,9 +43,10 @@ namespace TempleSignup.Controllers
         [HttpPost]
         public IActionResult Form(TempleModel tm)
         {
-            _context.Update(tm);
-            _context.SaveChanges();
-            return View("SignUp");
+
+                _context.Update(tm);
+                _context.SaveChanges();
+                return RedirectToAction("SignUp");
         }
     }
 }

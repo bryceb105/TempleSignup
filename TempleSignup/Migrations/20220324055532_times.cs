@@ -10,11 +10,10 @@ namespace TempleSignup.Migrations
                 name: "responses",
                 columns: table => new
                 {
-                    id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    id = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     DateTime = table.Column<string>(nullable: true),
-                    GroupSize = table.Column<int>(nullable: false),
+                    GroupSize = table.Column<int>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     Phone = table.Column<string>(nullable: true)
                 },

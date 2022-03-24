@@ -8,7 +8,7 @@ using TempleSignup.Models;
 namespace TempleSignup.Migrations
 {
     [DbContext(typeof(TempleContext))]
-    [Migration("20220324052223_times")]
+    [Migration("20220324055532_times")]
     partial class times
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

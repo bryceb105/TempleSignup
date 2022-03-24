@@ -7,7 +7,7 @@
     <form method="post">
 
         <div class="form-group">
-            <input type="hidden" asp-for="id" /><br />
+            <input type="hidden" value="@Model.id" asp-for="id" /><br />
         </div>
         <div class="form-group">
             <label asp-for="Name">Name</label>
@@ -19,10 +19,10 @@
         </div>
         <label asp-for="GroupSize">Group Size</label>
         <select class="form-control-sm" asp-for="GroupSize" required>
-            <option value="">Select a Number of People</option>
+            <option readonly value="">Select a Number of People</option>
             @for (int i = 1; i < 16; i++)
             {
-                <option value="i">@i</option>
+                <option value="@i">@i</option>
             }
         </select><br /><br />
         <div class="form-group">
@@ -34,8 +34,8 @@
             <input class="form-control-sm" asp-for="Phone" />
         </div>
         <br />
-        <a asp-controller="Home" asp-action="index" class="btn btn-outline-danger float-left m-1">Cancel</a>
-        <button type="submit" class="btn btn-outline-success float-left m-1">Add Appointment</button>
+        <a asp-controller="Home" asp-action="Form" class="btn btn-outline-danger float-left m-1">Cancel</a>
+        <input type="submit" class="btn btn-outline-success float-left m-1" value="Add Appointment"/>
         <div asp-validation-summary="All"></div>
     </form>
 </div>

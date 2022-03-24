@@ -10,7 +10,6 @@ namespace TempleSignup.Models
     public class TempleModel
     {
         [Key]
-        [BindNever]
         public int id { get; set; }
 
         //[Required(ErrorMessage = "Please enter a name:")]
