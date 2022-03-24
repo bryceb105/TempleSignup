@@ -34,8 +34,5 @@ namespace TempleSignup.Models
         public string Phone { get; set; }
 
 
-
-
-
     }
 }

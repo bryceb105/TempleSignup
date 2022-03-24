@@ -1,5 +1,34 @@
-﻿@model TempleModel
+﻿@model List<Time>
 @{
 }
-<h1>Please Select a Date and Time</h1>
+<h1>Please Select an Available Date and Time</h1>
+<br />
+
+
+@if (Model == null)
+{
+    <h4>No available times, please check again later.</h4>
+}
+else
+{
+
+    @foreach (var x in Model)
+    {
+        if (x.Available == true)
+        {
+            <a class="btn btn-group-lg btn-primary" asp-action="Form" asp-controller="Home" asp-route-id="@x.id">@x.DateTime</a>
+            <br />
+            <br />
+        }
+        else
+        {
+            <button type="button" class="btn btn-group-lg btn-danger" onclick="nope()">@x.DateTime</button>
+            <br />
+            <br />
+        }
+    }}
+<script>function nope(){
+    alert("This time is not available! Please choose another");
+    }
+    </script>
 

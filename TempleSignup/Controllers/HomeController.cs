@@ -26,13 +26,17 @@ namespace TempleSignup.Controllers
         [HttpGet]
         public IActionResult SignUp()
         {
-            return View();
-        }
-        [HttpGet]
-        public IActionResult Form(string time)
-        {
 
-            return View(time);
+            var times = _context.times.ToList();
+            return View(times);
+        }
+
+
+        [HttpGet]
+        public IActionResult Form(int id)
+        {
+           
+            return View();
         }
     }
 }
