@@ -11,12 +11,10 @@ namespace TempleSignup.Controllers
     public class HomeController : Controller
     {
 
-        private readonly ILogger<HomeController> _logger;
         private TempleContext _context { get; set; }
 
-        public HomeController(ILogger<HomeController> logger, TempleContext x)
+        public HomeController(TempleContext x)
         {
-            _logger = logger;
             _context = x;
         }
         public IActionResult Index()
@@ -24,10 +22,12 @@ namespace TempleSignup.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult SignUp()
+        public IActionResult SignUp(int pageNum = 1)
         {
+            int pageSize = 13;
 
-            var times = _context.times.ToList();
+
+            var times = _context.responses.OrderBy(x => x.id).Skip((pageNum-1) * pageSize).ToList();
             return View(times);
         }
 
@@ -35,8 +35,17 @@ namespace TempleSignup.Controllers
         [HttpGet]
         public IActionResult Form(int id)
         {
-           
-            return View();
+            var slot = _context.responses.Single(x => x.id == id);
+
+            return View(slot);
+        }
+
+        [HttpPost]
+        public IActionResult Form(TempleModel tm)
+        {
+            _context.Update(tm);
+            _context.SaveChanges();
+            return View("SignUp");
         }
 
         public IActionResult Appointments ()

@@ -13,23 +13,22 @@ namespace TempleSignup.Models
         [BindNever]
         public int id { get; set; }
 
-        [Required(ErrorMessage = "Please enter a name:")]
+        //[Required(ErrorMessage = "Please enter a name:")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Please enter a DateTime: ")]
-        public DateTime DateTime { get; set; }
+        //[Required]
+        public string DateTime { get; set; }
 
-        [Required(ErrorMessage = "Please enter a valid GroupSize (between 1 & 15) : ")]
+        //[Required(ErrorMessage = "Please enter a valid GroupSize (between 1 & 15) : ")]
         [Range(1, 15)]
         public int GroupSize { get; set; }
 
 
-        [Required(ErrorMessage = "Please enter a valid email address: ")]
+        //[Required(ErrorMessage = "Please enter a valid email address: ")]
         [EmailAddress]
         public string Email { get; set; }
 
 
-        [Required(ErrorMessage = "Please enter an phone number: ")]
         [Phone]
         public string Phone { get; set; }
 
