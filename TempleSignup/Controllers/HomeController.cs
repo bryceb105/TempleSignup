@@ -48,5 +48,10 @@ namespace TempleSignup.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("SignUp");
         }
+
+        public IActionResult Appointments ()
+        {
+            return View();
+        }
     }
 }
